@@ -30,15 +30,15 @@ class AIController {
     }
 
     getState(ball) {
-        let center = this.target.posX + this.target.w / 2;
         let deadZone = 10;
-
-        let distY = ball.posY > height * 0.5 ? 'NEAR' : 'FAR';
+        
+        let distX = this.target.posX + this.target.w / 2;
+        let distY = ball.posY > height / 2 ? 'NEAR' : 'FAR';
 
         let posX = 'CENTER';
-        if (ball.posX < center - deadZone) {
+        if (ball.posX < distX - deadZone) {
             posX = 'LEFT';
-        } else if (ball.posX > center + deadZone) {
+        } else if (ball.posX > distX + deadZone) {
             posX = 'RIGHT';
         }
 

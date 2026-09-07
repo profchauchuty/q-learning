@@ -1,4 +1,4 @@
-let GAME_SPEED = 3.0
+let GAME_SPEED = 2.0
 
 let player
 let controller
