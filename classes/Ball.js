@@ -19,11 +19,16 @@ class Ball {
         this.posX += this.speedX
         this.posY += this.speedY
 
-        if (this.posX + this.radius / 2 >= width || this.posX - this.radius / 2 <= 0) {
+        if (this.posX + this.radius / 2 >= width) {
+            this.posX = width - this.radius / 2;
+            this.speedX *= -1
+        } else if (this.posX - this.radius / 2 <= 0) {
+            this.posX = this.radius / 2;
             this.speedX *= -1
         }
 
         if (this.posY - this.radius / 2 <= 0) {
+            this.posY = this.radius / 2;
             if (this.speedX === 0) {
                 this.speedX = 3 * GAME_SPEED
             }
